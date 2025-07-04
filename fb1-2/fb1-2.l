@@ -1,10 +1,13 @@
 /*English -> American*/
+
 %%
+
 "colour"	{printf("color");}
 "flavour"	{printf("flavor");}
-"clevor"	{printf("clever");}
+"clever"	{printf("smart");}
 "smart"		{printf("elegant");}
 "conservative"	{printf("liberal");}
 
 .	{printf("%s", yytext);}
+
 %%

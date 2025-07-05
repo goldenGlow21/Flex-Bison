@@ -70,8 +70,10 @@
 #line 4 "fb1-5.y"
 
 #include <stdio.h>
+int yylex(void);
+void yyerror(char *s);
 
-#line 75 "fb1-5.tab.c"
+#line 77 "fb1-5.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -502,8 +504,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    16,    16,    17,    20,    21,    22,    25,    26,    27,
-      30,    31,    32
+       0,    18,    18,    19,    22,    23,    24,    27,    28,    29,
+      32,    33,    34
 };
 #endif
 
@@ -1073,49 +1075,49 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* calclist: calclist exp EOL  */
-#line 17 "fb1-5.y"
+#line 19 "fb1-5.y"
                                 {printf("= %d\n", yyvsp[-1]);}
-#line 1079 "fb1-5.tab.c"
+#line 1081 "fb1-5.tab.c"
     break;
 
   case 5: /* exp: exp ADD factor  */
-#line 21 "fb1-5.y"
+#line 23 "fb1-5.y"
                                 {yyval = yyvsp[-2] + yyvsp[0];}
-#line 1085 "fb1-5.tab.c"
+#line 1087 "fb1-5.tab.c"
     break;
 
   case 6: /* exp: exp SUB factor  */
-#line 22 "fb1-5.y"
+#line 24 "fb1-5.y"
                                 {yyval = yyvsp[-2] - yyvsp[0];}
-#line 1091 "fb1-5.tab.c"
+#line 1093 "fb1-5.tab.c"
     break;
 
   case 8: /* factor: factor MUL term  */
-#line 26 "fb1-5.y"
+#line 28 "fb1-5.y"
                                 {yyval = yyvsp[-2] * yyvsp[0];}
-#line 1097 "fb1-5.tab.c"
+#line 1099 "fb1-5.tab.c"
     break;
 
   case 9: /* factor: factor DIV term  */
-#line 27 "fb1-5.y"
+#line 29 "fb1-5.y"
                                 {yyval = yyvsp[-2] / yyvsp[0];}
-#line 1103 "fb1-5.tab.c"
+#line 1105 "fb1-5.tab.c"
     break;
 
   case 11: /* term: ABS term  */
-#line 31 "fb1-5.y"
+#line 33 "fb1-5.y"
                                 {yyval = yyvsp[0] >= 0 ? yyvsp[0] : -yyvsp[0];}
-#line 1109 "fb1-5.tab.c"
+#line 1111 "fb1-5.tab.c"
     break;
 
   case 12: /* term: OP exp CP  */
-#line 32 "fb1-5.y"
+#line 34 "fb1-5.y"
                                 {yyval = yyvsp[-1];}
-#line 1115 "fb1-5.tab.c"
+#line 1117 "fb1-5.tab.c"
     break;
 
 
-#line 1119 "fb1-5.tab.c"
+#line 1121 "fb1-5.tab.c"
 
       default: break;
     }
@@ -1308,7 +1310,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 35 "fb1-5.y"
+#line 37 "fb1-5.y"
 
 
 int main(int argc, char **argv)

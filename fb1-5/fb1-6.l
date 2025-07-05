@@ -1,7 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-#include "fb1-5.tab.h"   
+#include "fb1-6.tab.h"   
 %}
 
 %%
@@ -14,6 +14,9 @@
 [0-9]+    {yylval = atoi(yytext); return NUMBER;}
 \n        {return EOL;}
 [ \t]+    {/*skip whitespace*/}
+"("       {return OP;}
+")"       {return CP;}
+"//".*    /*ignore comments*/
 .         {printf("Mystery character %c\n", *yytext);}
 
 %%
